@@ -1,0 +1,53 @@
+@import "../../styles/variable.scss";
+
+.about__conteiner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+}
+
+.about__photo {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.about__photo img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  object-position: center 1%;
+  display: block;
+  border: 3px solid $text-color;
+  border-radius: 50%;
+}
+
+.about__text {
+  max-width: 600px;
+  flex-grow: 1;
+}
+
+.about__info {
+  display: flex;
+  flex-direction: column;
+}
+.about__info_cont {
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 10px;
+  gap: 10px;
+}
+
+dt {
+  font-weight: bold;
+  color: $hover-color;
+}
+
+.skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

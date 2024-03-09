@@ -1,21 +1,22 @@
-import './App.css';
-
+import Header from './Header/Header';
+import Home from './Sections/Home/Home';
+import About from './Sections/About/About';
+import Portfolio from './Sections/Portfolio/Portfolio';
+import Certificates from './Sections/Certificates/Certificates'
+import Contact from './Sections/Contact/Contact';
+import Footer from './Footer/Footer';
 function App() {
   return (
     <div className="App">
-      Туточки буде мій портфорліо а покищо відосік ЧІПІ-ЧАПИ Ги ГИ
-
-      <div className="video-container">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/watch?v=g7tzDP3oI2Y&list=LL&index=1&t=290s"
-          title="YouTube Video"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </div>
+      <Header />
+      <main>
+        <Home />
+        <About />
+        <Portfolio />
+        <Certificates />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }

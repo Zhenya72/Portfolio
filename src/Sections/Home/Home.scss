@@ -1,0 +1,19 @@
+@import "../../styles/variable.scss";
+.home {
+  background: #070803 url(../../img/photo.jpeg) 0px 0px / contain no-repeat;
+  height: 650px;
+  position: relative;
+}
+
+.home_content {
+  position: absolute;
+  left: 50%;
+  top: 200px;
+}
+.home_content h1 {
+  font-family: $title-font;
+  font-weight: 500;
+}
+.home_content h3 {
+  color: $hover-color;
+}

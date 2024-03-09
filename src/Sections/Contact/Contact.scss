@@ -1,0 +1,48 @@
+@import "../../styles/variable.scss";
+
+.contact__conteiner {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+ul li {
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+.form {
+  max-width: 500px;
+  width: 100%;
+
+  &__label {
+    border: none;
+    border: 1px solid $hover-color;
+    border-radius: 7px;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  &__control {
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    color: $text-color;
+
+    &:focus {
+      background-color: transparent;
+      color: $text-color;
+    }
+  }
+
+  &__button {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  &__button button {
+    width: 30%;
+  }
+}

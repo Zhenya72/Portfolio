@@ -1,0 +1,105 @@
+@import url("./styles/fonts.scss");
+@import "./styles/variable.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: $background-color;
+}
+
+.App {
+  height: 100vh;
+  font-family: $text-font;
+  font-weight: 400;
+  color: $text-color;
+  font-size: 18px;
+}
+
+.conteiner {
+  padding-top: 30px;
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  font-family: $title-font;
+  font-weight: 500;
+  font-size: 38px;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    background-color: $hover-color;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::before {
+    left: 29%;
+  }
+
+  &::after {
+    right: 29%;
+  }
+}
+span {
+  color: $hover-color;
+}
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: $hover-color;
+  color: #000;
+  border: 1px solid $hover-color;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+
+  &:hover {
+    background-color: #000;
+    color: $hover-color;
+    border: 1px solid $hover-color;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link {
+  color: $text-color;
+  text-decoration: none;
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+// @media (max-width: 500px) {
+//   .App {
+//     font-size: 14px;
+//   }
+//   .title {
+//     margin-bottom: 15px;
+//     font-size: 28px;
+//   }
+// }

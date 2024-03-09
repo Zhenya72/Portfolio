@@ -1,0 +1,17 @@
+.footer {
+  padding-bottom: 30px;
+}
+.footer__conteiner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer__address {
+  display: flex;
+}
+
+.footer__address .icon {
+  margin-right: 30px;
+}

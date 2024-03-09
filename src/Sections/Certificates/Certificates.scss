@@ -1,0 +1,57 @@
+@import "../../styles/variable.scss";
+
+section {
+  margin-bottom: 50px;
+}
+
+.carousel-item {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: auto;
+  color: $text-color;
+  font-size: 30px;
+  position: absolute;
+}
+.carousel-control-prev {
+  left: 220px;
+}
+.carousel-control-next {
+  right: 220px;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-indicators {
+  background-color: transparent;
+  position: absolute;
+  bottom: -50px;
+}
+.carousel-indicators [data-bs-target] {
+  background-color: #fff;
+  border: 1px solid $hover-color;
+  margin: 0 5px;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators .active {
+  background-color: $hover-color;
+}
