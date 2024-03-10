@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap';
 import portrait from '../../img/portrait.jpeg';
-import cv from '../../file/CV_Baranovskyi_Front-end Developer.pdf';
+import cv from '../../file/CV.pdf';
 import './About.scss';
 function About() {
   return (
