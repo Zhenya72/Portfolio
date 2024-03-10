@@ -8,6 +8,7 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   background-color: $background-color;
 }
@@ -62,15 +63,15 @@ span {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  background-color: $hover-color;
-  color: #000;
+  background-color: #000;
+  color: $hover-color;
   border: 1px solid $hover-color;
   border-radius: 50px;
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 
   &:hover {
-    background-color: #000;
-    color: $hover-color;
+    background-color: $hover-color;
+    color: #000;
     border: 1px solid $hover-color;
   }
 }
@@ -94,12 +95,51 @@ ul {
   font-size: 1.5rem;
 }
 
-// @media (max-width: 500px) {
-//   .App {
-//     font-size: 14px;
-//   }
-//   .title {
-//     margin-bottom: 15px;
-//     font-size: 28px;
-//   }
-// }
+@media (max-width: 1200px) {
+  .title {
+    &::before {
+      left: 20%;
+    }
+    &::after {
+      right: 20%;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .title {
+    &::before {
+      left: 10%;
+    }
+    &::after {
+      right: 10%;
+    }
+  }
+}
+@media (max-width: 800px) {
+  .conteiner {
+    padding-top: 15px;
+  }
+  .title {
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .App {
+    font-size: 14px;
+  }
+  .title {
+    margin-bottom: 15px;
+    font-size: 28px;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}

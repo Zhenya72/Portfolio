@@ -1,5 +1,5 @@
 import React from 'react'
-import { TelephoneFill, EnvelopeAtFill, Telegram } from 'react-bootstrap-icons';
+import { TelephoneFill, EnvelopeAtFill, Telegram, Linkedin } from 'react-bootstrap-icons';
 import {Container} from 'react-bootstrap';
 import './Footer.scss';
 function Footer() {
@@ -18,6 +18,9 @@ function Footer() {
                   </li>
                   <li>
                     <a className="link" href="https://t.me/Zhenya_72"><Telegram className='icon'/></a>
+                  </li>
+                  <li>
+                    <a className="link" href="https://t.me/Zhenya_72"><Linkedin className='icon'/></a>
                   </li>
                 </ul>
               </address>

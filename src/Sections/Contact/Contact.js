@@ -1,11 +1,11 @@
 import React from 'react'
-import { TelephoneFill, EnvelopeAtFill, Telegram } from 'react-bootstrap-icons';
+import { TelephoneFill, EnvelopeAtFill, Telegram, Linkedin } from 'react-bootstrap-icons';
 import { Container } from 'react-bootstrap';
 import ContactForm from './ContactForm';
 import './Contact.scss';
 function Contact() {
   return (
-    <section className="conteiner" id="contact">
+    <section className="conteiner mt-5" id="contact">
         <Container>
             <h2 className="title">CONTACT</h2>
             <div className='contact__conteiner'>
@@ -26,6 +26,12 @@ function Contact() {
                   <li>
                     <a className="link" href="https://t.me/Zhenya_72">
                       <Telegram className='icon'/>
+                      @Zhenya_72
+                    </a>
+                  </li>
+                  <li>
+                    <a className="link" href="https://t.me/Zhenya_72">
+                      <Linkedin className='icon'/>
                       @Zhenya_72
                     </a>
                   </li>

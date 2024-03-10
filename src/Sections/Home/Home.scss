@@ -1,7 +1,7 @@
 @import "../../styles/variable.scss";
 .home {
   background: #070803 url(../../img/photo.jpeg) 0px 0px / contain no-repeat;
-  height: 650px;
+  height: 90vh;
   position: relative;
 }
 
@@ -13,7 +13,35 @@
 .home_content h1 {
   font-family: $title-font;
   font-weight: 500;
+  font-size: 38px;
 }
 .home_content h3 {
   color: $hover-color;
+}
+
+@media (max-width: 800px) {
+  .home {
+    height: 70vh;
+  }
+  .home_content {
+    top: 150px;
+  }
+}
+@media (max-width: 660px) {
+  .home {
+    height: 50vh;
+  }
+  .home_content {
+    left: 40%;
+    top: 170px;
+  }
+}
+
+@media (max-width: 500px) {
+  .home_content h1 {
+    font-size: 28px;
+  }
+  .home_content {
+    left: 30%;
+  }
 }

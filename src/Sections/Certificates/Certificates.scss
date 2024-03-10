@@ -1,7 +1,7 @@
 @import "../../styles/variable.scss";
 
 section {
-  margin-bottom: 50px;
+  margin-bottom: 5%;
 }
 
 .carousel-item {
@@ -23,12 +23,13 @@ section {
   color: $text-color;
   font-size: 30px;
   position: absolute;
+  z-index: 100;
 }
 .carousel-control-prev {
-  left: 220px;
+  left: 20%;
 }
 .carousel-control-next {
-  right: 220px;
+  right: 20%;
 }
 
 .carousel-item.active {
@@ -39,7 +40,7 @@ section {
 .carousel-indicators {
   background-color: transparent;
   position: absolute;
-  bottom: -50px;
+  bottom: -15%;
 }
 .carousel-indicators [data-bs-target] {
   background-color: #fff;
@@ -54,4 +55,17 @@ section {
 
 .carousel-indicators .active {
   background-color: $hover-color;
+}
+
+@media (max-width: 500px) {
+  .carousel-item {
+    height: 30vh;
+  }
+  .carousel-indicators [data-bs-target] {
+    width: 6px;
+    height: 6px;
+  }
+  .carousel-indicators {
+    bottom: -20%;
+  }
 }

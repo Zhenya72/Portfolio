@@ -4,7 +4,8 @@
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  gap: 50px;
+  gap: 40px;
+  padding: 20px;
 }
 
 ul li {
@@ -15,34 +16,86 @@ ul li {
 .form {
   max-width: 500px;
   width: 100%;
+  padding: 20px;
+  background-color: $background-color;
+  border: 1px solid $hover-color;
+  border-radius: 8px;
+  position: relative;
 
-  &__label {
-    border: none;
-    border: 1px solid $hover-color;
-    border-radius: 7px;
-    box-shadow: none;
-    background-color: transparent;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(255, 94, 247, 1) 17.8%,
+      rgba(2, 245, 255, 1) 100.2%
+    );
+    filter: blur(15px);
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 
-  &__control {
+  .form__label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    &.focused,
+    input:valid {
+      label {
+        transform: translateY(-5px);
+        font-size: 12px;
+        color: $text-color;
+      }
+    }
+
+    label {
+      transform: translateY(30px);
+      transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+    }
+  }
+
+  .form__control {
     width: 100%;
+    padding: 10px;
+    font-size: 14px;
     border: none;
-    box-shadow: none;
+    border-bottom: 2px solid $hover-color;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
     background-color: transparent;
     color: $text-color;
 
     &:focus {
-      background-color: transparent;
-      color: $text-color;
+      outline: none;
+      border-color: $text-color;
     }
   }
 
-  &__button {
-    padding-top: 20px;
+  .form__button {
+    margin-top: 15px;
     display: flex;
     justify-content: center;
+
+    button {
+      width: 30%;
+    }
   }
-  &__button button {
-    width: 30%;
+
+  .error {
+    color: #dc3545;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 800px) {
+  .contact__conteiner {
+    flex-direction: column;
+    align-items: center;
   }
 }

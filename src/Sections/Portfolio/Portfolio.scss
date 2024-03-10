@@ -5,6 +5,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
+  margin-bottom: 20px;
 }
 .portfolio__buttons button {
   background-color: transparent;
@@ -44,5 +45,6 @@
   grid-gap: 20px;
   margin: 0 auto;
   justify-items: center;
-  padding-top: 40px;
+  padding: 20px 0;
+  background-color: $background-color2;
 }
