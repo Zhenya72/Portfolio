@@ -3,12 +3,6 @@
 .header {
   background-color: $background-color;
 }
-// .header {
-//   .navbar-toggler-icon {
-//     background-color: $text-color;
-//     border-radius: 2px;
-//   }
-// }
 
 .navbar-toggler-icon {
   background-image: url("../img/burger.png");
@@ -43,10 +37,41 @@
   }
 }
 
+.language-dropdown {
+  display: flex;
+  margin-left: 30px;
+  align-items: center;
+  gap: 10px;
+  color: $text-color;
+  font-family: $text-font;
+  font-weight: 500;
+
+  .language-options {
+    display: flex;
+    gap: 4px;
+
+    span {
+      cursor: pointer;
+      transition: color 0.3s ease;
+      color: $text-color;
+
+      &:hover {
+        color: $hover-color;
+        text-decoration: underline;
+      }
+
+      &.active {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 .mobile__body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .mobile_item {
@@ -55,4 +80,43 @@
   font-family: $text-font;
   text-decoration: none;
   cursor: pointer;
+}
+
+.mobile-language {
+  margin-left: 0px;
+  gap: 10px;
+  font-family: $text-font;
+  font-weight: 500;
+  text-decoration: none;
+
+  .language-options {
+    display: flex;
+    gap: 4px;
+
+    span {
+      color: #000;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $hover-color;
+        text-decoration: underline;
+      }
+
+      &.active {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .me-auto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+    margin: 0 auto;
+  }
 }

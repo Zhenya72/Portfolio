@@ -3,18 +3,21 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import emailjs from 'emailjs-com';
 import { toast } from 'react-toastify';
+import { useLanguage } from '../../translations/LanguageContext';
 
 const ContactForm = () => {
-    const initialValues = {
+  const { t } = useLanguage();
+
+  const initialValues = {
     name: '',
     email: '',
     message: '',
   };
 
   const validationSchema = Yup.object({
-    name: Yup.string().required('Name is required'),
-    email: Yup.string().email('Invalid email address').required('Email is required'),
-    message: Yup.string().required('Message is required'),
+    name: Yup.string().required(t('form_error_name')),
+    email: Yup.string().email(t('form_error_email_inv')).required(t('form_error_email')),
+    message: Yup.string().required(t('form_error_message')),
   });
 
   const [focusedFields, setFocusedFields] = useState({
@@ -38,14 +41,14 @@ const ContactForm = () => {
       const templateId = 'template_vh4f8hm';
       const publicKey = 'cIgt7zSB7cdiEzsgg';
       await emailjs.send(serviceId, templateId, values, publicKey);
-      toast.success(`Form submitted successfully!`, {
+      toast.success(t('form_Submit_ok'), {
       position: "top-right",
       autoClose: 5000,
       });
       resetForm();
     }
     catch (error) {
-      toast.error(`Error when submitting a form: ${error.message}`, {
+      toast.error(`${t('form_Submit_error')} ${error.message}`, {
       position: "top-right",
       autoClose: 5000,
       });
@@ -60,7 +63,7 @@ const ContactForm = () => {
     >
       <Form className="form" autoComplete="off">
         <div className={`mb-2 form__label ${focusedFields.name || initialValues.name ? 'focused' : ''}`}>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">{t('form_name')}</label>
           <Field
             type="text"
             id="name"
@@ -78,7 +81,6 @@ const ContactForm = () => {
             type="email"
             id="email"
             name="email"
-            // placeholder="Enter your email"
             className='form__control'
             onFocus={() => handleFocus('email')}
             onBlur={(e) => handleBlur('email', e.target.value)}
@@ -87,12 +89,11 @@ const ContactForm = () => {
         </div>
 
         <div className={`mb-2 form__label ${focusedFields.message || initialValues.message ? 'focused' : ''}`}>
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message">{t('form_message')}</label>
           <Field
             as="textarea"
             id="message"
             name="message"
-            // placeholder="Enter your message"
             className='form__control'
             onFocus={() => handleFocus('message')}
             onBlur={(e) => handleBlur('message', e.target.value)}
@@ -101,7 +102,7 @@ const ContactForm = () => {
         </div>
 
         <div className="form__button">
-          <button className="button" type="submit">SEND</button>
+          <button className="button" type="submit">{t('form_but')}</button>
         </div>
       </Form>
     </Formik>

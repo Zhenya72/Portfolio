@@ -6,12 +6,14 @@ import slide3 from '../../img/Certificates/CSS.jpg';
 import slide4 from '../../img/Certificates/js.jpg';
 import slide5 from '../../img/Certificates/jQuery.jpg';
 import slide6 from '../../img/Certificates/В1.jpg';
+import { useLanguage } from '../../translations/LanguageContext';
 import './Certificates.scss'
 function Certificates() {
+  const { t } = useLanguage();
   return (
     <section className="conteiner" id="certificates">
         <Container>
-            <h2 className="title">CERTIFICATES</h2>
+            <h2 className="title">{t('certificates')}</h2>
             <Carousel 
             fade={true}
             pause={false}

@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import {Container, Nav, Navbar, Offcanvas} from 'react-bootstrap';
 import Logo from '../img/logo.ico'; 
 import { Link } from 'react-scroll';
+import { useLanguage } from '../translations/LanguageContext';
 import './Header.scss';
 
 function Header() {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
+  const { t, setLang, language } = useLanguage();
   
   const closeOffcanvas = () => {
     setShowOffcanvas(false);
@@ -38,7 +40,7 @@ function Header() {
             placement="end">
             <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
-                  Menu
+                {t('menu')}
                 </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body className={`${window.innerWidth >= 992 ? '' : 'mobile__body'}`}>
@@ -50,7 +52,7 @@ function Header() {
                   smooth={true}
                   duration={500}
                 >
-                  HOME
+                  {t('home')}
                 </Link>
                 <Link
                   to="about"
@@ -59,7 +61,7 @@ function Header() {
                   smooth={true}
                   duration={500}
                 >
-                  ABOUT ME
+                  {t('about_me')}
                 </Link>
                 <Link
                   to="portfolio"
@@ -68,7 +70,7 @@ function Header() {
                   smooth={true}
                   duration={500}
                 >
-                  PORTFOLIO
+                  {t('portfolio')}
                 </Link>
                 <Link
                   to="certificates"
@@ -77,7 +79,7 @@ function Header() {
                   smooth={true}
                   duration={500}
                 >
-                  CERTIFICATES
+                  {t('certificates')}
                 </Link>
                 <Link
                   to="contact"
@@ -86,8 +88,25 @@ function Header() {
                   smooth={true}
                   duration={500}
                 >
-                  CONTACT
+                  {t('contact')}
                 </Link>
+                <div className={`${window.innerWidth >= 992 ? 'language-dropdown' : 'mobile-language'}`}>
+                  <div className="language-options">
+                    <span
+                      onClick={() => setLang('en')}
+                      className={language === 'en' ? 'active' : ''}
+                    >
+                      EN
+                    </span>
+                    |
+                    <span
+                      onClick={() => setLang('cs')}
+                      className={language === 'cs' ? 'active' : ''}
+                    >
+                      CS
+                    </span>
+                  </div>
+                </div>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>   

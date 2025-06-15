@@ -11,8 +11,11 @@ import Stopwatch from '../../img/Portfolio/Stopwatch.png';
 import DataAndTime from '../../img/Portfolio/DataAndTime.png';
 import Calculator from '../../img/Portfolio/Calculator.png';
 import Card from '../../Components/Card/Card';
+import { useLanguage } from '../../translations/LanguageContext';
 import './Portfolio.scss';
 function Portfolio() {
+  const { t } = useLanguage();
+
   const cards = [
   {id: 1, title: 'Footapp', subtitle: 'React, Bootstrap, Axios, react-router-dom', category: 'react', img: Footapp, link: 'https://footapp-eaencap9w-zhenya72s-projects.vercel.app/authorization', githubLink: 'https://github.com/Zhenya72/footapp'},
   {id: 2, title: 'SmilaRoof', subtitle: 'React, Bootstrap, Axios, react-router-dom, Zustand, TanStack Query', category: 'react', img: SmilaRoof, link: 'https://smila-roof.vercel.app/', githubLink: 'https://github.com/Zhenya72/SmilaRoof'},
@@ -41,11 +44,11 @@ function Portfolio() {
   return (
     <section className="conteiner" id="portfolio">
         <Container>
-            <h2 className="title">PORTFOLIO</h2>
+            <h2 className="title">{t('portfolio')}</h2>
             <div className='portfolio__buttons'>
               <button 
               onClick={() => setSelectedCategory('all')} 
-              className={`${selectedCategory === 'all' ? 'active' : ''}`}>All</button>
+              className={`${selectedCategory === 'all' ? 'active' : ''}`}>{t('portfolio_all')}</button>
               <button 
               onClick={() => setSelectedCategory('react')}
               className={`${selectedCategory === 'react' ? 'active' : ''}`}
@@ -53,7 +56,7 @@ function Portfolio() {
               <button 
               onClick={() => setSelectedCategory('verstka')}
               className={`${selectedCategory === 'verstka' ? 'active' : ''}`}
-              >verstka</button>
+              >{t('portfolio_verstka')}</button>
               <button 
               onClick={() => setSelectedCategory('js')}
               className={`${selectedCategory === 'js' ? 'active' : ''}`}

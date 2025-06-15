@@ -2,36 +2,36 @@ import React from 'react'
 import { Container } from 'react-bootstrap';
 import portrait from '../../img/portrait.jpeg';
 import cv from '../../file/CV.pdf';
+import { useLanguage } from '../../translations/LanguageContext';
 import './About.scss';
 function About() {
+  const { t } = useLanguage();
   return (
     <section className="conteiner" id="about">
         <Container>
-            <h2 className="title">ABOUT ME</h2>
+            <h2 className="title">{t('about_me')}</h2>
             <div className='about__conteiner'>
                 <div className='about__photo'>
                       <img src={ portrait } alt='portrait' />
                 </div>
                 <div className='about__text'>
-                    <p>
-                        I am a Front-end developer with a strong foundation in HTML, CSS (including frameworks and preprocessors like SCSS), and JavaScript. Skilled in creating modern, responsive web interfaces. Experienced in React.js. Strong collaborator with effective communication and teamwork skills, able to contribute to innovative projects.
-                    </p>
+                    <p>{t('about__text')}</p>
                     <dl className='about__info'>
                         <div className='about__info_cont'>
-                            <dt>Full name:</dt>
-                            <dd>Baranovskiy Yevheniy</dd>
+                            <dt>{t('about_title_name')}</dt>
+                            <dd>Baranovskiy Yevhenii</dd>
                         </div>
                         <div className='about__info_cont'>
-                            <dt>Date of birth:</dt>
-                            <dd>12 March 2001</dd>
+                            <dt>{t('about_title_birth')}</dt>
+                            <dd>{t('about_birth')}</dd>
                         </div>
                         <div className='about__info_cont'>
-                            <dt>Nationality:</dt>
-                            <dd>Ukrainian</dd>
+                            <dt>{t('about_title_nationality')}</dt>
+                            <dd>{t('about_nationality')}</dd>
                         </div>
                         <div className='about__info_cont'>
-                            <dt>Phone:</dt>
-                            <dd>(063)-628-93-85</dd>
+                            <dt>{t('about_title_phone')}</dt>
+                            <dd>+420602269521</dd>
                         </div>
                         <div className='about__info_cont'>
                             <dt>Email:</dt>
@@ -39,12 +39,12 @@ function About() {
                         </div>
                     </dl>
                      <a className='button' href={cv} download="CV_Baranovskyi_Front-end Developer.pdf">
-                        Download CV
+                     {t('about_Download_CV')}
                     </a>
                 </div>
             </div>
             <div>
-                <h3 className='text-center m-5'><span>SKI</span>LLS</h3>
+                <h3 className='text-center m-5'><span>{t('about_skills_start')}</span>{t('about_skills_end')}</h3>
                 <div className='skills'>
                     <p>HTML</p>
                     <p>CSS</p>
